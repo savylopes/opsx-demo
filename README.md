@@ -52,19 +52,6 @@ Como funciona a sessão:
 - A sessão é guardada no servidor. O cookie `HttpOnly` leva só um token aleatório, e o banco guarda apenas o hash dele.
 - O logout invalida a sessão de verdade: o token antigo deixa de funcionar.
 
-## Como rodar
-
-> Os comandos abaixo passam a funcionar quando a change `add-login` for integrada em `main`. Os detalhes completos de setup (variáveis de ambiente, usuários de teste, como trocar para o ChatGPT) chegam junto com ela.
-
-Pré-requisitos: Node 22 e Docker.
-
-```bash
-docker compose up -d     # Postgres + provedor OIDC fake
-npm install
-npm run db:migrate
-npm run dev              # API em :3000, web em http://localhost:5173
-```
-
 ## Estrutura (planejada)
 
 ```
